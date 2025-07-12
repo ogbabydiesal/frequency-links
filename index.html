@@ -56,17 +56,18 @@
       });
     
       function submit() {
-        nameField.addClass('disappear');
-        submitButton.addClass('disappear');
+        // nameField.addClass('disappear');
+        // submitButton.addClass('disappear');
+        // instruction.addClass('disappear');
+        // nameStuff.addClass('disappear');
+        // inputStuff.removeClass('disappear');
         socket.emit("name", nameField.value());
-        instruction.addClass('disappear');
-        nameStuff.addClass('disappear');
-        inputStuff.removeClass('disappear');
+        
         //make the input fields and buttons dissapear
         freqState.html('idle...');
-        freqInput.removeClass('disappear');
-        sendButton.removeClass('disappear');
-        buttonEl.removeClass('disappear');
+        // freqInput.removeClass('disappear');
+        // sendButton.removeClass('disappear');
+        // buttonEl.removeClass('disappear');
         oscillator.start();
       }
 
@@ -91,7 +92,7 @@
         inputStuff = createDiv();
         inputStuff.id('inputStuff');
         inputStuff.position(10, 250);
-        inputStuff.addClass('disappear');
+        //inputStuff.addClass('disappear');
         //create frequency input and button
         freqInput = createInput();
         freqInput.id('frequency');
@@ -103,7 +104,7 @@
         sendButton.mousePressed(sendFreq);
         //create play button
         buttonEl = createButton('play');
-        buttonEl.mousPressed(play);
+        buttonEl.mousePressed(play);
         buttonEl.id('buttonText');
         buttonEl.position(10, 90);
         //create frequency state text
@@ -124,7 +125,7 @@
         inputStuff.child(sendButton);
         //create title
         title = createElement('h1', 'frequency links');
-        title.position(10, 100);
+        title.position(10, -10);
         title.class('title');
         //create subtitle
         subtitle = createElement('p', 'a multi-person audio work');
