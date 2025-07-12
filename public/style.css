@@ -2,9 +2,7 @@ body {
     margin:0;
     padding:0;
     margin-top:25px;
-    background-color:black;
-    color:white;
-    font-family: 'Playfair', sans-serif;
+    font-family: sans-serif;
     font-size: 13px;
     font-weight: 100;
     }
@@ -15,36 +13,22 @@ body {
     text-align:center;  
 }
 
-.gustState {
-  font-size: 13;
-  
-  color:blue;
-}
-
 button {
   font-size:12;
   font-family: 'Playfair', sans-serif;
   font-style: italic;
   font-style: oblique;
-  background-color:transparent;
-  border-color:black;
+  /* background-color:transparent; */
+  /* border-color:red; */
   border-radius:1000px;
   border-style:solid;
   border-width:1px; 
   width:60px;
   height:20px;
   cursor:pointer;
-  color:white;
-  box-shadow:1px 2px 8px grey;
+  /* color:white; */
+  /* box-shadow:1px 2px 8px grey; */
   margin-left:10px;
-}
-
-p {
-  
-}
-
-video{
-  z-index:-1;
 }
 
 .disappear {
@@ -52,22 +36,19 @@ video{
   height:0px;
   margin:0px;
   padding:0px;
+  visibility: hidden;
 }
 
 #submit {
   width:60px;
   height:20px;
-  font-family: 'Playfair', sans-serif;
+  font-family: sans-serif;
 
 }
 
 #buttonText {
   width:60px;
   height:20px;
-  font-family: 'Playfair', sans-serif;
+  font-family: sans-serif;
 
-}
-
-#inputStuff {
-  opacity:0;
 }
