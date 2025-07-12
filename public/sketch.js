@@ -6,7 +6,6 @@ function preload() {
     img = loadImage('holdinghands.png');
 }
 
-
 function sendFreq(){
     const data = [nameField.value(), freqInput.value()]
     socket.emit("frequency", data);
