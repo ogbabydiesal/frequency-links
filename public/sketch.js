@@ -2,7 +2,6 @@ let socket = io();
 let playing = false;
 
 function preload() {
-    //add image file from public folder
     img = loadImage('holdinghands.png');
 }
 
@@ -24,7 +23,6 @@ socket.on('response', (data) => {
     freqState.html(data + " joined the room");
 });
 
-//messages can come straight from the server, not just from other clients! look inside of the server.js code to see the server emitting a trigger  
 socket.on('trigger', (data) => {
     console.log(data[0]);
     console.log(data[1]); 
@@ -32,9 +30,9 @@ socket.on('trigger', (data) => {
 
 function submit() {
     socket.emit("name", nameField.value());
-
     freqState.html('idle...');
     oscillator.start();
+    playing = true;
 }
 
 async function setup() {
@@ -71,13 +69,14 @@ async function setup() {
     sendButton.position(freqInput.x + freqInput.width + 10, 50);
     sendButton.mousePressed(sendFreq);
     //create play button
-    buttonEl = createButton('play');
+    buttonEl = createButton('stop');
     buttonEl.mousePressed(play);
     buttonEl.id('buttonText');
     buttonEl.position(10, 90);
     //create frequency state text
     freqState = createP('idle...');
     freqState.class('freqState');
+    freqState.style('width', '400px');
     freqState.position(10, 130);
 
     //create name stuff section
@@ -103,8 +102,9 @@ async function setup() {
     attribution = createElement('p', 'by Tommy (2023)');
     attribution.position(10, 35);
     attribution.class('attribution');
+    //create a p5 sound oscillator
     oscillator = new p5.Oscillator(440, "square");
-    oscillator.amp(0.5);
+    oscillator.amp(0.33);
     del = new p5.Delay(0.210, 0.66);
     oscillator.disconnect();
     oscillator.connect(del);
